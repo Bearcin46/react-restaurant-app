@@ -4,7 +4,8 @@ import Shimmer from "./Shimmer";
 
 export const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
-  const [serachItem, setSearchItem] = useState("");
+  const [filteredRes, setFilteredRes] = useState([]);
+  const [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -13,6 +14,7 @@ export const Body = () => {
     data = await fetch("http://localhost:3232/restaurants");
     json = await data.json();
     setListOfRestaurant(json);
+    setFilteredRes(json);
   };
   // if (listOfRestaurant.length === 0) {
   //   return <Shimmer />;
@@ -22,11 +24,11 @@ export const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="serach">
+        <div className="search">
           <input
             type="text"
             className="search-box"
-            value={serachItem}
+            value={searchItem}
             onChange={(e) => {
               setSearchItem(e.target.value);
             }}
@@ -34,7 +36,11 @@ export const Body = () => {
           <button
             className="search"
             onClick={() => {
-              listOfRestaurant.filter((res) => res.data.name === serachItem);
+              const filteredRestaurant = listOfRestaurant.filter((res) =>
+                res.data.name.toLowerCase().includes(searchItem.toLowerCase())
+              );
+
+              setFilteredRes(filteredRestaurant);
             }}
           >
             SEARCH
@@ -46,14 +52,14 @@ export const Body = () => {
             const filteredList = listOfRestaurant.filter(
               (res) => res.data.avgRating > 4
             );
-            setListOfRestaurant(filteredList);
+            setFilteredRes(filteredList);
           }}
         >
           Filter Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurant.map((datas) => {
+        {filteredRes.map((datas) => {
           return <RestaurantCard key={datas.data.id} {...datas.data} />;
         })}
       </div>
