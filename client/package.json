@@ -1,0 +1,34 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "This is a learning series by Bearcin",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bearcin46/Learn-react.git"
+  },
+  "keywords": [
+    "reactjs"
+  ],
+  "author": "Bearcin Sweety",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bearcin46/Learn-react/issues"
+  },
+  "homepage": "https://github.com/Bearcin46/Learn-react#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browsersList": [
+    "last 2 version"
+  ]
+}

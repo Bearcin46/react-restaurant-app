@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.logo {
+  width: 120px;
+  cursor: pointer;
+}
+.nav-items > ul {
+  display: flex;
+  padding: 0px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+  list-style: none;
+}
+
+.res-card {
+  width: 200px;
+  height: 320px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #e8e8e9;
+}
+.res-card:hover {
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+.search {
+  padding: 10px;
+}
+.res-logo {
+  width: 100%;
+}
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.details-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimer-cards {
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
+  margin: 20px;
+}
+.login {
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
